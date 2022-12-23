@@ -7,10 +7,12 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {title, colors, btn1, hr80} from '../../globals/style';
-import Icon from 'react-native-vector-icons/MaterialIcons';
 import {authentication} from '../../../firebase';
 import {signInWithEmailAndPassword} from 'firebase/auth';
-
+import Octicons from 'react-native-vector-icons/Octicons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import Entypo from 'react-native-vector-icons/Entypo';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 export default function LoginScreen({navigation}) {
   const [emailFocus, setEmailFocus] = useState(false);
   const [passwordFocus, setPasswordFocus] = useState(false);
@@ -35,8 +37,9 @@ export default function LoginScreen({navigation}) {
     <View style={styles.conatiner}>
       <Text style={styles.head1}>Sign In</Text>
       <View style={styles.inputout}>
-        <Icon
-          name="person"
+        <AntDesign
+          style={{marginTop: 10}}
+          name="user"
           size={24}
           color={emailFocus === true ? 'red' : 'black'}
         />
@@ -53,8 +56,9 @@ export default function LoginScreen({navigation}) {
         />
       </View>
       <View style={styles.inputout}>
-        <Icon
-          name="lock"
+        <MaterialIcons
+          style={{marginTop: 10}}
+          name="lock-outline"
           size={24}
           color={passwordFocus === true ? 'red' : 'black'}
         />
@@ -69,8 +73,9 @@ export default function LoginScreen({navigation}) {
           onChangeText={text => setPassword(text)}
           secureTextEntry={showPasswordFocus === false ? true : false}
         />
-        <Icon
-          name={showPasswordFocus == false ? 'visibility_off' : 'visibility'}
+        <Octicons
+          style={{marginTop: 10}}
+          name={showPasswordFocus == false ? 'eye-closed' : 'eye'}
           size={24}
           color="black"
           onPress={() => {
@@ -94,12 +99,12 @@ export default function LoginScreen({navigation}) {
       <View style={styles.gf}>
         <TouchableOpacity>
           <View style={styles.gficon}>
-            <Icon name="public" size={24} color="blue" />
+            <AntDesign name="google" size={24} color="blue" />
           </View>
         </TouchableOpacity>
         <TouchableOpacity>
           <View style={styles.gficon}>
-            <Icon name="public" size={24} color="blue" />
+            <Entypo name="facebook" size={24} color="blue" />
           </View>
         </TouchableOpacity>
       </View>

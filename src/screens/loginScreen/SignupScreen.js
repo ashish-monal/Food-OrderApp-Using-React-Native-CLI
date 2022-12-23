@@ -13,7 +13,10 @@ import {authentication} from '../../../firebase';
 import {createUserWithEmailAndPassword} from 'firebase/auth';
 import {db} from '../../../firebase';
 import {doc, setDoc} from 'firebase/firestore/lite';
-
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
+import Octicons from 'react-native-vector-icons/Octicons';
+import Entypo from 'react-native-vector-icons/Entypo';
 export default function SignupScreen({navigation}) {
   const [emailFocus, setEmailFocus] = useState(false);
   const [passwordFocus, setPasswordFocus] = useState(false);
@@ -63,8 +66,9 @@ export default function SignupScreen({navigation}) {
       <View style={styles.conatiner}>
         <Text style={styles.head1}>Sign Up</Text>
         <View style={styles.inputout}>
-          <Icon
-            name="person"
+          <AntDesign
+            style={{marginTop: 10}}
+            name="user"
             size={24}
             color={nameFocus === true ? 'red' : 'black'}
           />
@@ -84,7 +88,8 @@ export default function SignupScreen({navigation}) {
         </View>
 
         <View style={styles.inputout}>
-          <Icon
+          <MaterialIcons
+            style={{marginTop: 10}}
             name="email"
             size={24}
             color={emailFocus === true ? 'red' : 'black'}
@@ -104,8 +109,9 @@ export default function SignupScreen({navigation}) {
           />
         </View>
         <View style={styles.inputout}>
-          <Icon
-            name="smartphone"
+          <AntDesign
+            style={{marginTop: 10}}
+            name="phone"
             size={24}
             color={phoneFocus === true ? 'red' : 'black'}
           />
@@ -125,8 +131,9 @@ export default function SignupScreen({navigation}) {
         </View>
 
         <View style={styles.inputout}>
-          <Icon
-            name="lock"
+          <MaterialIcons
+            style={{marginTop: 10}}
+            name="lock-outline"
             size={24}
             color={passwordFocus === true ? 'red' : 'black'}
           />
@@ -144,8 +151,9 @@ export default function SignupScreen({navigation}) {
             onChangeText={text => setPassword(text)}
             secureTextEntry={showPassword === false ? true : false}
           />
-          <Icon
-            name={showPassword == false ? 'visibility_off' : 'visibility'}
+          <Octicons
+            style={{marginTop: 10}}
+            name={showPassword == false ? 'eye-closed' : 'eye'}
             size={24}
             color="black"
             onPress={() => {
@@ -155,8 +163,9 @@ export default function SignupScreen({navigation}) {
         </View>
 
         <View style={styles.inputout}>
-          <Icon
-            name="lock"
+          <MaterialIcons
+            style={{marginTop: 10}}
+            name="lock-outline"
             size={24}
             color={cpasswordcFocus === true ? 'red' : 'black'}
           />
@@ -170,8 +179,9 @@ export default function SignupScreen({navigation}) {
             }}
             secureTextEntry={showcpassword === false ? true : false}
           />
-          <Icon
-            name={showcpassword == false ? 'visibility_off' : 'visibility'}
+          <Octicons
+            style={{marginTop: 10}}
+            name={showcpassword == false ? 'eye-closed' : 'eye'}
             size={24}
             color="black"
             onPress={() => {
@@ -205,12 +215,12 @@ export default function SignupScreen({navigation}) {
         <View style={styles.gf}>
           <TouchableOpacity>
             <View style={styles.gficon}>
-              <Icon name="public" size={24} color="blue" />
+              <AntDesign name="google" size={24} color="blue" />
             </View>
           </TouchableOpacity>
           <TouchableOpacity>
             <View style={styles.gficon}>
-              <Icon name="public" size={24} color="blue" />
+              <Entypo name="facebook" size={24} color="blue" />
             </View>
           </TouchableOpacity>
         </View>

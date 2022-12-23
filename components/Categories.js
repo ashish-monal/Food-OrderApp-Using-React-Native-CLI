@@ -1,19 +1,26 @@
 import {View, Text, ScrollView, StyleSheet} from 'react-native';
 import React from 'react';
 import {colors} from '../src/globals/style';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
 export default function Categories() {
   return (
     <View style={styles.container}>
       <Text style={styles.head}>Categories</Text>
       <ScrollView horizontal showsHorizontalScrollIndicator={false}>
         <View style={styles.box}>
-          <Icon name="menu" size={24} color="black" style={styles.icon} />
+          <FontAwesome5
+            name="hamburger"
+            size={24}
+            color="black"
+            style={styles.icon}
+          />
           <Text style={styles.text}>Burger</Text>
         </View>
         <View style={styles.box}>
-          <Icon
-            name="local_pizza"
+          <FontAwesome5
+            name="pizza-slice"
             size={24}
             color="black"
             style={styles.icon}
@@ -21,8 +28,8 @@ export default function Categories() {
           <Text style={styles.text}>Pizza</Text>
         </View>
         <View style={styles.box}>
-          <Icon
-            name="romen_dining"
+          <MaterialCommunityIcons
+            name="noodles"
             size={24}
             color="black"
             style={styles.icon}
@@ -30,15 +37,30 @@ export default function Categories() {
           <Text style={styles.text}>Noodles</Text>
         </View>
         <View style={styles.box}>
-          <Icon name="coffee" size={24} color="black" style={styles.icon} />
+          <FontAwesome5
+            name="coffee"
+            size={24}
+            color="black"
+            style={styles.icon}
+          />
           <Text style={styles.text}>Coffee</Text>
         </View>
         <View style={styles.box}>
-          <Icon name="local_cafe" size={24} color="black" style={styles.icon} />
+          <MaterialCommunityIcons
+            name="tea"
+            size={24}
+            color="black"
+            style={styles.icon}
+          />
           <Text style={styles.text}>Tea</Text>
         </View>
         <View style={styles.box}>
-          <Icon name="water_drop" size={24} color="black" style={styles.icon} />
+          <MaterialCommunityIcons
+            name="cup-water"
+            size={24}
+            color="black"
+            style={styles.icon}
+          />
           <Text style={styles.text}>Water</Text>
         </View>
       </ScrollView>
@@ -52,6 +74,7 @@ const styles = StyleSheet.create({
   icon: {
     marginRight: 10,
     color: colors.text3,
+    marginTop: 10,
   },
   box: {
     backgroundColor: colors.col1,

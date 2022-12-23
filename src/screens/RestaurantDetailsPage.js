@@ -8,7 +8,7 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
 import {useNavigation} from '@react-navigation/native';
 export default function RestaurantDetailsPage({route}) {
   const navigation = useNavigation();
@@ -65,19 +65,19 @@ export default function RestaurantDetailsPage({route}) {
               }>
               {item}
             </Text>
-            <Icon
-              name="add_circle_outline"
+            <AntDesign
+              name="pluscircleo"
               size={24}
               color="black"
-              style={{marginVertical: 20}}
+              style={{marginVertical: 20, color: '#9d95cd'}}
               onPress={() => setCount(count + 1)}
             />
             <Text style={{marginVertical: 20}}>{count}</Text>
-            <Icon
-              name="remove_circle_outline"
+            <AntDesign
+              name="minuscircleo"
               size={24}
               color="black"
-              style={{marginVertical: 20}}
+              style={{marginVertical: 20, color: '#9d95cd'}}
               onPress={() => {
                 if (count == 0) {
                   setCount(0);

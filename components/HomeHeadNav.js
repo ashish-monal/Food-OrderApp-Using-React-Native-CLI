@@ -1,6 +1,8 @@
 import {View, Text, StyleSheet, TouchableOpacity, Alert} from 'react-native';
 import React, {useState} from 'react';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
+import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 import {colors} from '../src/globals/style';
 import {useNavigation} from '@react-navigation/native';
 import {signOut} from 'firebase/auth';
@@ -21,13 +23,23 @@ export default function HomeHeadNav() {
   };
   return (
     <View style={styles.container}>
-      <Icon name="menu" size={24} color="black" style={styles.myicon} />
+      <FontAwesome
+        name="navicon"
+        size={24}
+        color="black"
+        style={styles.myicon}
+      />
       <View style={styles.containerIn}>
         <Text style={styles.mytext}>CHEF FOOD</Text>
-        <Icon name="fastfood" size={30} color="black" style={styles.myicon} />
+        <Ionicons
+          name="fast-food-sharp"
+          size={30}
+          color="black"
+          style={styles.myicon}
+        />
       </View>
       <TouchableOpacity onPress={SignOutUser}>
-        <Icon name="account-circle" size={24} color="black" />
+        <FontAwesome5 name="user-circle" size={24} color="black" />
       </TouchableOpacity>
     </View>
   );

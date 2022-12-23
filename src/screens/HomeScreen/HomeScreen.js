@@ -9,7 +9,7 @@ import React, {useState} from 'react';
 import HomeHeadNav from '../../../components/HomeHeadNav';
 import Categories from '../../../components/Categories';
 import OfferSlider from '../../../components/OfferSlider';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {colors} from '../../globals/style';
 import RestaurantList from '../../../components/RestaurantList';
 import RestaurantsData from '../../../Data/zomato.json';
@@ -45,7 +45,7 @@ export default function HomeScreen() {
           onChangeText={e => SetSearchText(e)}
         />
         <TouchableOpacity onPress={() => searchRestaurants()}>
-          <Icon
+          <FontAwesome
             name="search"
             size={24}
             color="black"
