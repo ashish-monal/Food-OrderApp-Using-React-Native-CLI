@@ -1,7 +1,8 @@
 import {createMaterialBottomTabNavigator} from '@react-navigation/material-bottom-tabs';
 import HomeScreen from '../HomeScreen/HomeScreen';
 import Profile from '../Profile';
-import Icon from 'react-native-vector-icons/MaterialIcons';
+import AntDesign from 'react-native-vector-icons/AntDesign';
+import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import TrackOrder from '../TrackOrder';
 
 const Tab = createMaterialBottomTabNavigator();
@@ -13,23 +14,23 @@ export default function BottomNavigation() {
         name="Home"
         component={HomeScreen}
         options={{
-          tabBarIcon: () => <Icon name="home" size={24} color="black" />,
+          tabBarIcon: () => <AntDesign name="home" size={24} color="black" />,
         }}
       />
       <Tab.Screen
         name="TrackOrder"
         component={TrackOrder}
         options={{
-          tabBarIcon: () => <Icon name="history" size={24} color="black" />,
+          tabBarIcon: () => (
+            <MaterialIcons name="history" size={24} color="black" />
+          ),
         }}
       />
       <Tab.Screen
         name="Profile"
         component={Profile}
         options={{
-          tabBarIcon: () => (
-            <Icon name="perm_identity" size={24} color="black" />
-          ),
+          tabBarIcon: () => <AntDesign name="user" size={24} color="black" />,
         }}
       />
     </Tab.Navigator>
